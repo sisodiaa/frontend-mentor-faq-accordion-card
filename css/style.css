@@ -45,6 +45,8 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 3rem;
+  color: var(--color-text--blue);
+  box-shadow: 0 2rem 6rem -3rem;
 }
 .accordion__image {
   position: relative;
