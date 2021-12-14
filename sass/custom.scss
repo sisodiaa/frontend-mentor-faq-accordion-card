@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$breakpoint-mobile: 45em;
+
+:root {
+  --color-text-blue: hsl(238, 29%, 16%);
+  --color-text-red: hsl(14, 88%, 65%);
+  --color-text-dark-grayish-blue: hsl(237, 12%, 33%);
+  --color-text-grayish-blue: hsl(240, 6%, 50%);
+  --color-gradient-violet: hsl(273, 75%, 66%);
+  --color-gradient-blue: hsl(240, 73%, 65%);
+  --color-divider-blue: hsl(240, 5%, 91%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 75%;
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-gradient-violet),
+    var(--color-gradient-blue)
+  );
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.accordion {
+  width: 80%;
+  max-width: 40rem;
+  background-color: var(--color-white);
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  border-radius: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+
+  &__image {
+    position: relative;
+    display: block;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      width: 85%;
+    }
+
+    &::after {
+      // make a background image adjust its height automatically
+      // https://stackoverflow.com/a/22211990
+      position: absolute;
+      content: "";
+      background-image: url(../images/bg-pattern-mobile.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      height: 0;
+      padding-top: 43.3333%;
+    }
+  }
+
+  &__content {
+    margin-top: 32.5vw;
+  } 
+
+  &__heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  &__list {
+    margin-top: 2rem;
+    list-style: none;
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--color-divider-blue);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+    color: var(--color-text-dark-grayish-blue);
+    cursor: pointer;
+    display: block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: 10px;
+      height: 7px;
+      background-image: url(../images/icon-arrow-down.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    &:hover {
+      color: var(--color-text-red);
+    }
+  }
+
+  &__paragraph {
+    display: none;
+    margin-top: 1rem;
+    color: var(--color-text-grayish-blue);
+    line-height: 1.5;
+    transition: visibility 0.5s, height 0.5s linear, opacity 0.5s linear;
+  }
+
+  &__input:checked ~ &__label {
+    font-weight: 700;
+    color: var(--color-text-blue);
+
+    &::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  &__input:checked ~ &__paragraph {
+    display: block;
+  }
+}
+
+.attribution {
+  display: none;
+}

@@ -13,26 +13,127 @@
   <title>Frontend Mentor | FAQ Accordion Card</title>
 </head>
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+  <div class="container">
+    <main class="accordion">
+      <picture class="accordion__image">
+        <img
+          src="images/illustration-woman-online-mobile.svg"
+          alt="Illustration"
+        />
+      </picture>
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+      <section class="accordion__content">
+        <h1 class="accordion__heading">FAQ</h1>
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
+        <ul class="accordion__list">
+          <li class="accordion__item">
+            <input
+              type="checkbox"
+              name="faq_accordion"
+              id="team-limit"
+              class="accordion__input"
+            >
+            <label
+              for="team-limit"
+              class="accordion__label"
+            >
+              How many team members can I invite?
+            </label>
+            <p class="accordion__paragraph">
+              You can invite up to 2 additional users on the Free plan. 
+              There is no limit on team members for the Premium plan.
+            </p>
+          </li>
 
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
+          <li class="accordion__item">
+            <input
+              type="checkbox"
+              name="faq_accordion"
+              id="file-size"
+              class="accordion__input"
+            >
+            <label
+              for="file-size"
+              class="accordion__label"
+            >
+              What is the maximum file upload size?
+            </label>
+            <p class="accordion__paragraph">
+              No more than 2GB. All files in your account must fit your 
+              allotted storage space.
+            </p>
+          </li>
 
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+          <li class="accordion__item">
+            <input
+              type="checkbox"
+              name="faq_accordion"
+              id="password-reset"
+              class="accordion__input"
+            >
+            <label
+              for="password-reset"
+              class="accordion__label"
+            >
+              How do I reset my password?
+            </label>
+            <p class="accordion__paragraph">
+              Click “Forgot password” from the login page or 
+              “Change password” from your profile page.
+              A reset link will be emailed to you.
+            </p>
+          </li>
+          
+          <li class="accordion__item">
+            <input
+              type="checkbox"
+              name="faq_accordion"
+              id="cancel-subscription"
+              class="accordion__input"
+            >
+            <label
+              for="cancel-subscription"
+              class="accordion__label"
+            >
+              Can I cancel my subscription?
+            </label>
+            <p class="accordion__paragraph">
+              Yes! Send us a message and we’ll process your request no 
+              questions asked.
+            </p>
+          </li>
+          
+          <li class="accordion__item">
+            <input
+              type="checkbox"
+              name="faq_accordion"
+              id="support"
+              class="accordion__input"
+            >
+            <label
+              for="support"
+              class="accordion__label"
+            >
+              Do you provide additional support?
+            </label>
+            <p class="accordion__paragraph">
+              Chat and email support is available 24/7. Phone lines are 
+              open during normal business hours.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by 
+    <a
+      href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+    >
+      Frontend Mentor
+    </a>. 
+    Coded by <a href="#">Abhishek Sisodia</a>.
   </div>
 </body>
 </html>
