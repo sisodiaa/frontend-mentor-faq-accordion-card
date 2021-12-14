@@ -63,6 +63,7 @@ body {
       left: 50%;
       transform: translate(-50%, -60%);
       width: 85%;
+      z-index: 200;
     }
 
     &::after {
@@ -79,6 +80,7 @@ body {
       width: 85%;
       height: 0;
       padding-top: 43.3333%;
+      z-index: 100;
     }
   }
 
@@ -151,6 +153,72 @@ body {
 
   &__input:checked ~ &__paragraph {
     display: block;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-mobile) {
+  .accordion {
+    position: relative;
+    display: grid;
+    width: 60%;
+    max-width: 100rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    &__image {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 55%;
+        left: 28%;
+        width: 100%;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: -50%;
+        left: -16%;
+        width: 189%;
+        height: 0;
+        padding-top: 200%;
+      }
+    }
+
+    &__content {
+      grid-row: 1 / span 1;
+      grid-column: 2 / span 1;
+      margin-top: 0;
+      padding: 6rem 6rem 4rem 0;
+    }
+
+    &__heading {
+      text-align: left;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -7%);
+      width: 26%;
+      height: 0;
+      z-index: 300;
+      background-image: url(../images/illustration-box-desktop.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 96.335%;
+    }
   }
 }
 
